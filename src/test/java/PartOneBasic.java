@@ -240,23 +240,6 @@ public class PartOneBasic {
 
         //Number 7
 
-        public static void Testing_Nomod(){ //public method
-            //Block of code
-        }
-        public int Return_Type(){ //This method has int return type.
-            int i=10;
-            return i;
-        }public void My_Method1(){ //Non static Method
-            //Block of code
-        }
-
-        public static void My_Method2(){ //Static Method
-            //Block of code
-        }public static void Login(String user, String Pass){ //Login is the method name.
-            //Block of code
-        }public static void Student_Details(int Rollno, String Name){ //Rollno and Name are input parameters preceded by their data types
-            //Block of code
-        }
 
         //Number 9
 
@@ -286,7 +269,24 @@ public class PartOneBasic {
                 System.out.println("Test Message");
             }
         }
+        //Number 7
+        public static void Testing_Nomod(){ //public method
+            //Block of code
+        }
+        public int Return_Type(){ //This method has int return type.
+            int i=10;
+            return i;
+        }public void My_Method1(){ //Non static Method
+            //Block of code
+        }
 
+        public static void My_Method2(){ //Static Method
+            //Block of code
+        }public static void Login(String user, String Pass){ //Login is the method name.
+            //Block of code
+        }public static void Student_Details(int Rollno, String Name){ //Rollno and Name are input parameters preceded by their data types
+            //Block of code
+        }
 
         
     }
