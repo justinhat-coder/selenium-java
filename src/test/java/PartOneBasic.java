@@ -1,3 +1,7 @@
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Hashtable;
+
 public class PartOneBasic {
     //Number 1
     public static class datatypes {
@@ -287,7 +291,282 @@ public class PartOneBasic {
         }public static void Student_Details(int Rollno, String Name){ //Rollno and Name are input parameters preceded by their data types
             //Block of code
         }
+        //Number 11
+        public class vehicle {
+            public void main(String[] args) {
+                //Created object for vehicle class using new keyword.
+                //bicycle is the reference variable of this object.
+                vehicle bicycle = new vehicle("Black");
 
-        
+            }
+            //Constructor with color parameter passed. It will retrieve value from object vehicle.
+            public vehicle(String color){
+                //Retrieved value will be printed.
+                System.out.println("Color Of vehicle Is "+color);
+            }
+        }
+        //public class vehicle {
+
+            //public void main(String[] args) {
+                //Create 2 objects of class. Both have different reference variables.
+               // vehicle bicycle = new vehicle("black", 2, 4500, 3.7);
+               // vehicle motorcycle = new vehicle("Blue", 2, 67000, 74.6);
+
+           // }
+
+            //public vehicle(String color, int wheels, int price, double speed){
+               // System.out.println("Color = "+color+", Wheels = "+wheels+", Price = "+price+", Speed = "+speed);
+           // }
+        //}
+
+        // output
+        //Color = black, Wheels = 2, Price = 4500, Speed = 3.7
+        //Color = Blue, Wheels = 2, Price = 67000, Speed = 74.6
+
+        //Number 12
+        public static class Collage1 {
+
+            //Class Variables - Collage name will be same for both departments so declared as class(static) variable.
+            public static String Collage_Name = "A1 Collage";
+
+            //Instance Variables
+            private String Department = "Computer Engineering";
+            private String name;
+            private double percentile;
+            public static void main(String[] args) {//Static Method
+                //Can access class variable directly If needed. i.e. Collage_Name
+                Collage1 student1 = new Collage1("Robert");
+                student1.setPercentage(67.32);
+                student1.print_details();
+                //Can access Instance variable using object reference If needed.
+                //Example : student1.name = "Robert";
+
+                Collage1 student2 = new Collage1("Alex");
+                student2.setPercentage(72.95);
+                student2.print_details();
+            }
+            public Collage1(String student_name){//Constructor
+                //Can access Instance variable directly Inside constructor.
+                name = student_name;
+            }
+            public void setPercentage(double perc){
+                //Can access Instance variable directly Inside non static method.
+                percentile = perc;
+            }
+
+            public void print_details(){
+                int Year = 2014; //Local Variable - Can not access It outside this method.
+                System.out.println("Resultg Of Year = "+Year);
+                System.out.println("Student's Collage Name = "+Collage_Name);
+                System.out.println("Student's Department = "+Department);
+                System.out.println("Student's Name = "+name);
+                System.out.println("Student's percentile = "+percentile+"%");
+                System.out.println("**********************");
+            }
+
+        }
+        public static class Collage2 {
+
+            private String Department = "Mechanical Engineering";
+            private String name;
+            private double percentile;
+            public static void main(String[] args) {
+                Collage2 student1 = new Collage2("Smith");
+                student1.setPercentage(57.35);
+                student1.print_details();
+            }
+            public Collage2(String student_name){
+                name = student_name;
+            }
+
+            public void setPercentage(double perc){
+                percentile = perc;
+            }
+
+            public void print_details(){
+                int Year = 2014;
+                System.out.println("Resultg Of Year = "+Year);
+                //Can access other class's class variable using that class name.
+                System.out.println("Student's Collage Name = "+Collage1.Collage_Name);
+                System.out.println("Student's Department = "+Department);
+                System.out.println("Student's Name = "+name);
+                System.out.println("Student's percentile = "+percentile+"%");
+                System.out.println("**********************");
+            }
+        }
+        //output
+        //Resultg Of Year = 2014
+        //Student's Collage Name = A1 Collage
+        //Student's Department = Computer Engineering
+        //Student's Name = Robert
+        //Student's percentile = 67.32%
+        //**********************
+        //Resultg Of Year = 2014
+        //Student's Collage Name = A1 Collage
+        //Student's Department = Computer Engineering
+        //Student's Name = Alex
+        //Student's percentile = 72.95%
+        //**********************
+        //Resultg Of Year = 2014
+        //Student's Collage Name = A1 Collage
+        //Student's Department = Mechanical Engineering
+        //Student's Name = Smith
+        //Student's percentile = 57.35%
+        //**********************
+
+        //Number 13
+        public static class Student {
+            public static void main(String[] args) {
+                //Two different objects created with value.
+                Student stdn1 = new Student("Michael");
+                Student stdn2 = new Student("Robert");
+            }
+
+            //Constructor with parameter to pass values of object
+            //Name of constructor Is same as class name.
+            public Student(String name){
+                String stdnname = name;
+                System.out.println("Student's Name Is "+stdnname);
+            }
+
+        }
+        //outpit
+        //Student's Name Is Michael
+        //Student's Name Is Robert
+
+       //   public class Student {
+        //            String finame;//Instance variable
+        //            String miname;//Instance Variable
+        //            public static void main(String[] args) {
+        //                Student stdn1 = new Student("Jim");
+        //                Student stdn2 = new Student("Mary", "Elizabeth");
+        //            }
+        //
+        //            //Constructor with one argument.
+        //            public Student(String fname){
+        //                finame = fname;//Local Variable
+        //                System.out.println("1. First Name Is "+finame);
+        //            }
+        //
+        //            //Overloaded Constructor with two arguments.
+        //            public Student(String fname, String mname){
+        //                finame = fname;
+        //                miname = mname;
+        //                System.out.println("2. First Name Is "+finame);
+        //                System.out.println("2. Middle Name Is "+miname);
+        //            }
+        //        }
+        //1. First Name Is Jim
+        //2. First Name Is Mary
+        //2. Middle Name Is Elizabeth
+       // public class Student {
+        //            String finame;
+        //            String miname;
+        //            public static void main(String[] args) {
+        //                Student stdn2 = new Student("Mary", "Elizabeth");
+        //            }
+        //
+        //            //Constructor with one argument.
+        //            public Student(String fname){
+        //                finame = fname;
+        //                System.out.println("1. First Name Is "+finame);
+        //            }
+        //
+        //            //Overloaded Constructor with two arguments.
+        //            public Student(String fname, String mname){
+        //                this("Jim"); //1st constructor Is called using this keyword.
+        //                finame = fname;
+        //                miname = mname;
+        //                System.out.println("2. First Name Is "+finame);
+        //                System.out.println("2. Middle Name Is "+miname);
+        //            }
+        //        }
+        //Number 15
+        //Import ArrayList class header file
+
+
+        public static class ArrayList_Example {
+
+            public static void main(String[] args) {
+                //Create object of ArrayList class. It will store only string values.
+                ArrayList<String> Sample = new ArrayList<String>();
+                //Now you can store any number of values In this arraylist as bellow. Size constrain will comes never.
+                Sample.add("button1"); //Putting an Item In arraylist at Index = 0.
+                Sample.add("button2"); //Putting an Item In arraylist at Index = 1.
+                Sample.add("button3"); //Putting an Item In arraylist at Index = 2.
+                Sample.add("button4"); //Putting an Item In arraylist at Index = 3.
+
+                for(int i=0; i<Sample.size();i++){//loop will execute till size of arraylist.
+                    System.out.println(Sample.get(i)); //print arraylist values one by one.
+                }
+
+                System.out.println("*************************");
+                //To get the Index of an Item from arraylist.
+                int ItemIndex = Sample.indexOf("button3");
+                System.out.println("Index Of button3 Item = "+ItemIndex);
+                System.out.println("*************************");
+
+                Sample.remove(1);//To remove an Item from arraylist.
+                for(int i=0; i<Sample.size();i++){
+                    System.out.println(Sample.get(i));
+                }
+                System.out.println("*************************");
+
+                Sample.set(2, "Button8");//To reset value of an arraylist item.
+                for(int i=0; i<Sample.size();i++){
+                    System.out.println(Sample.get(i));
+                }
+            }
+        }
+        //Number 17
+        //Import Hashtable header file.
+
+
+        public static class Hash {
+            public static void main(String[] args) {
+                //Created hashtable class object to use Its different properties.
+                Hashtable<String, Integer> t1 = new Hashtable<String, Integer>();
+                t1.put("Legs", 4); //Store value 4 In key = Legs
+                t1.put("Eyes",2); //Store value 2 In key = Eyes
+                t1.put("Mouth",1); //Store value 1 In key = Mouth
+
+                //Accessing hash table values using keys.
+                System.out.println("Animal Legs = " +t1.get("Legs"));
+                System.out.println("Animal Eyes = " +t1.get("Eyes"));
+                System.out.println("Animal Mouth = " +t1.get("Mouth"));
+            }
+        }
+        //Number 18
+
+        public static class RW_File {
+
+            public static void main(String[] args) throws IOException {
+                //Create File In D: Driver.
+                String TestFile = "D:\\temp.txt";
+                File FC = new File(TestFile);//Created object of java File class.
+                FC.createNewFile();//Create file.
+
+                //Writing In to file.
+                //Create Object of java FileWriter and BufferedWriter class.
+                FileWriter FW = new FileWriter(TestFile);
+                BufferedWriter BW = new BufferedWriter(FW);
+                BW.write("This Is First Line."); //Writing In To File.
+                BW.newLine();//To write next string on new line.
+                BW.write("This Is Second Line."); //Writing In To File.
+                BW.close();
+
+                //Reading from file.
+                //Create Object of java FileReader and BufferedReader class.
+                FileReader FR = new FileReader(TestFile);
+                BufferedReader BR = new BufferedReader(FR);
+                String Content = "";
+
+                //Loop to read all lines one by one from file and print It.
+                while((Content = BR.readLine())!= null){
+                    System.out.println(Content);
+                }
+            }
+        }
+
     }
 }
