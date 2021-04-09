@@ -567,6 +567,107 @@ public class PartOneBasic {
                 }
             }
         }
+        //Numher 19
+        public static class Handle_exce {
 
+            public static void main(String[] args) {
+                int a[] = {3,1,6};
+                try { //If any exception arise Inside this try block, Control will goes to catch block.
+                    System.out.println("Before Exception");
+                    //unchecked exception
+                    System.out.println(a[9]);//Exception will arise here because we have only 3 values In array.
+                    System.out.println("After Exception");
+                }catch(Exception e){
+                    System.out.println("Exception Is "+e);
+                }
+                System.out.println("Outside The try catch.");
+            }
+        }
+        //public static class Handle_exce {
+        //
+        //            public static void main(String[] args) {
+        //                catchexc();
+        //            }
+        //            private static void catchexc() {
+        //                try {
+        //                    //throwexc() Method called.
+        //                    throwexc();
+        //                } catch (ArrayIndexOutOfBoundsException e) {
+        //                    System.out.println("Array Index out of bound exception.");
+        //                }
+        //            }
+        //
+        //            private static void throwexc() {
+        //                //This statement will throw ArrayIndexOutOfBoundsException exception.
+        //                throw new ArrayIndexOutOfBoundsException();
+        //            }
+        //        }
+        //public class Handle_exce {
+        //
+        // public static void main(String[] args) {
+        //  try{
+        //   int i=5/0; //Exception will be thrown.
+        //   System.out.println("Value Of i Is "+i);//This statement will be not executed.
+        //  }catch (Exception e)//Exception will be caught.
+        //  {
+        //   System.out.println("Inside catch."+e);//print the exception.
+        //  }finally//finally block will be executed.
+        //  {
+        //   System.out.println("Inside finally. Please take appropriate action");
+        //  }
+        //
+        //  try{
+        //   int j=5/2; //Exception will be not thrown.
+        //   System.out.println("Value Of j Is "+j);//This statement will be executed.
+        //  }catch (Exception e)//No exception so catch block code will not execute.
+        //  {
+        //   System.out.println("Inside catch."+e);
+        //  }finally//finally block code will be executed.
+        //  {
+        //   System.out.println("Inside finally. Please take appropriate action");
+        //  }
+        // }
+        //}
+        //What is encapsulation in java
+
+        public static class Encaps {
+
+            private String name;
+            private int rollNo;
+
+            //Data setter method
+            public void setName(String newName) {
+                name = newName;
+            }
+
+            //Data setter method
+            public void setrollNo(int newrollNo) {
+                rollNo = newrollNo;
+            }
+
+            //Data getter method
+            public String getName() {
+                return name;
+            }
+
+            //Data getter method
+            public int getrollNo() {
+                return rollNo;
+            }
+        }
+        public static class exeEncaps {
+
+            public static void main(String[] args) {
+                //Created object of Encaps class to set and get data.
+                Encaps encaps = new Encaps();
+
+                //Set data using setter methods of Encaps class.
+                encaps.setName("Monika");
+                encaps.setrollNo(56);
+
+                //Get data using getter methods of Encaps class.
+                System.out.println("RollNo : "+encaps.getrollNo()+", Name : "+encaps.getName());
+            }
+        }
     }
 }
