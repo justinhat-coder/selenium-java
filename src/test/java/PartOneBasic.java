@@ -669,5 +669,107 @@ public class PartOneBasic {
                 System.out.println("RollNo : "+encaps.getrollNo()+", Name : "+encaps.getName());
             }
         }
+
+        public static class StaticPolymorph {
+
+            //Method 1
+            public int sum(int x, int y) {
+                return x + y;
+            }
+
+            //Method 2
+            public int sum(int x, int y, int z) {
+                return x + y + z;
+            }
+
+            //Method 3
+            public int sum(double x, int y) {
+                return (int) x + y;
+            }
+
+            //Method 4
+            public int sum(int x, double y) {
+                return x + (int) y;
+            }
+        }
+
+        public static class ExcStaticPolymorph {
+
+            public
+            static void main(String[] args) {
+                StaticPolymorph poly = new StaticPolymorph();
+
+                // Call Method 1
+                System.out.println(poly.sum(1, 7));
+
+                // Call Method 2
+                System.out.println(poly.sum(4, 2, 1));
+
+                // Call Method 3
+                System.out.println(poly.sum(2.5, 3));
+
+                // Call Method 4
+                System.out.println(poly.sum(4, 3.7));
+            }
+        }
+
+        public static class Animal {
+            public void makeNoise() {
+                System.out.println("Some sound of animal.");
+            }
+        }
+        static class Dog extends Animal {
+            public void makeNoise() {
+                System.out.println("Woof");
+            }
+        }
+
+        public static class ExcAnimalAndDog {
+
+            public static void main(String[] args) {
+
+                Animal a1 = new Animal();
+                // Call makeNoise() from Animal class
+                a1.makeNoise();
+
+                Animal a2 = new Dog();
+                // Call makeNoise() from Dog class
+                a2.makeNoise();
+            }
+        }
+        public static class OverloadingByArgument {
+
+            void Sum(int i, int j) {
+                System.out.println(i + j);
+            }
+
+            void Sum(int i, int j, int k) {
+                System.out.println(i + j + k);
+            }
+
+            public static void main(String args[]) {
+                OverloadingByArgument ol = new OverloadingByArgument();
+                ol.Sum(10, 10, 10); //It will call Sum(int i, int j, int k)
+                ol.Sum(20, 20);//It will call Sum(int i, int j)
+            }
+        }
+
+        public static class OverloadingByDataTypes {
+
+            void Sum(int i, int j) {
+                System.out.println(i + j);
+            }
+
+            void Sum(double i, double j) {
+                System.out.println(i + j);
+            }
+
+            public static void main(String args[]) {
+                OverloadingByDataTypes ol = new OverloadingByDataTypes();
+                ol.Sum(10.75, 10.5); //It will call Sum(double i, double j)
+                ol.Sum(20, 20);//It will call Sum(int i, int j)
+            }
+        }
+
     }
 }
