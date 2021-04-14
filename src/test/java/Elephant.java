@@ -1,6 +1,7 @@
 public class Elephant extends Animal {
     int age = 100;
 
+
     Elephant() {
         // To invoke parent class constructor Animal().
         super();

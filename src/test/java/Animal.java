@@ -1,5 +1,6 @@
 public class Animal {
     int age = 40;
+
     Animal(){
         System.out.println("Animal is moving.");
     }
