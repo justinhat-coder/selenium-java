@@ -292,19 +292,19 @@ public class PartOneBasic {
             //Block of code
         }
         //Number 11
-        public class vehicle {
-            public void main(String[] args) {
+        //public static class vehicle {
+            //public void main(String[] args) {
                 //Created object for vehicle class using new keyword.
                 //bicycle is the reference variable of this object.
-                vehicle bicycle = new vehicle("Black");
+                //vehicle bicycle = new vehicle("Black");
 
-            }
+           // }
             //Constructor with color parameter passed. It will retrieve value from object vehicle.
-            public vehicle(String color){
+           // public vehicle(String color){
                 //Retrieved value will be printed.
-                System.out.println("Color Of vehicle Is "+color);
-            }
-        }
+                //System.out.println("Color Of vehicle Is "+color);
+           // }
+       // }
         //public class vehicle {
 
             //public void main(String[] args) {
@@ -324,47 +324,8 @@ public class PartOneBasic {
         //Color = Blue, Wheels = 2, Price = 67000, Speed = 74.6
 
         //Number 12
-        public static class Collage1 {
 
-            //Class Variables - Collage name will be same for both departments so declared as class(static) variable.
-            public static String Collage_Name = "A1 Collage";
 
-            //Instance Variables
-            private String Department = "Computer Engineering";
-            private String name;
-            private double percentile;
-            public static void main(String[] args) {//Static Method
-                //Can access class variable directly If needed. i.e. Collage_Name
-                Collage1 student1 = new Collage1("Robert");
-                student1.setPercentage(67.32);
-                student1.print_details();
-                //Can access Instance variable using object reference If needed.
-                //Example : student1.name = "Robert";
-
-                Collage1 student2 = new Collage1("Alex");
-                student2.setPercentage(72.95);
-                student2.print_details();
-            }
-            public Collage1(String student_name){//Constructor
-                //Can access Instance variable directly Inside constructor.
-                name = student_name;
-            }
-            public void setPercentage(double perc){
-                //Can access Instance variable directly Inside non static method.
-                percentile = perc;
-            }
-
-            public void print_details(){
-                int Year = 2014; //Local Variable - Can not access It outside this method.
-                System.out.println("Resultg Of Year = "+Year);
-                System.out.println("Student's Collage Name = "+Collage_Name);
-                System.out.println("Student's Department = "+Department);
-                System.out.println("Student's Name = "+name);
-                System.out.println("Student's percentile = "+percentile+"%");
-                System.out.println("**********************");
-            }
-
-        }
         public static class Collage2 {
 
             private String Department = "Mechanical Engineering";
@@ -387,7 +348,7 @@ public class PartOneBasic {
                 int Year = 2014;
                 System.out.println("Resultg Of Year = "+Year);
                 //Can access other class's class variable using that class name.
-                System.out.println("Student's Collage Name = "+Collage1.Collage_Name);
+                System.out.println("Student's Collage Name = "+ College1.Collage_Name);
                 System.out.println("Student's Department = "+Department);
                 System.out.println("Student's Name = "+name);
                 System.out.println("Student's percentile = "+percentile+"%");
